@@ -10,11 +10,11 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     login: (state) => {
-        Cookies.set('isAuth', true);
+      Cookies.set('isAuth', true);
       state.isAuthenticated = true;
     },
     logout: (state) => {
-        Cookies.remove('isAuth');
+      Cookies.remove('isAuth');
       state.isAuthenticated = false;
     },
   },
