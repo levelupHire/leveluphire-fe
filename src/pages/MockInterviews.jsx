@@ -165,7 +165,6 @@ const MockInterviews = () => {
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Level</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Start</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
               </tr>
             </thead>
@@ -188,29 +187,15 @@ const MockInterviews = () => {
                   <td className="px-6 py-4 align-middle">
                     <span className="text-sm text-gray-900">{interview.interviewTime}</span>
                   </td>
-                  <td className="px-6 py-4 align-middle">
-                    <div
-                      onClick={() => handleStart(interview.id)}
-                      className="inline-flex items-center gap-2 cursor-pointer text-sm font-normal rounded-full shadow px-5 py-2 bg-primary text-white hover:bg-primary-dark focus:ring-2 focus:ring-primary focus:outline-none transition-all duration-200 select-none"
-                      tabIndex={0}
-                      role="button"
-                      title="Start Interview"
-                    >
-                      <FiPlay className="w-5 h-5" />
-                      Start
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 align-middle">
-                    <div
-                      onClick={() => handleNotAttend(interview.id)}
-                      className="inline-flex items-center gap-2 cursor-pointer text-sm font-normal rounded-full shadow px-5 py-2 bg-red-600 text-white hover:bg-red-700 focus:ring-2 focus:ring-red-400 focus:outline-none transition-all duration-200 select-none"
-                      tabIndex={0}
-                      role="button"
-                      title="Skip Interview"
-                    >
-                      <FiXCircle className="w-5 h-5" />
-                      Skip
-                    </div>
+                  <td className="px-6 py-4 align-middle flex justify-start gap-5">
+                      <FiPlay 
+                        className="w-5 h-5 cursor-pointer text-primary hover:text-primary-dark"
+                        onClick={() => handleStart(interview.id)}
+                      />
+                      <FiXCircle 
+                        className="w-5 h-5 cursor-pointer text-red-500 hover:text-red-600"
+                        onClick={() => handleNotAttend(interview.id)}
+                      />
                   </td>
                 </tr>
               ))}
